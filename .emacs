@@ -8,15 +8,16 @@
 (global-set-key "\C-h" (quote delete-backward-char))
 
 ;; font
-(if window-system
-    (setq default-frame-alist
-	  (append (list
-		   '(font . "Migu 1M 13")
-		   '(width . 80) '(height . 40)
-		   )
-		  default-frame-alist)
-	  )
-  )
+(when window-system
+  (setq default-frame-alist
+	(append (list
+		 '(font . "Migu 1M 13")
+		 '(width . 80) '(height . 40)
+		 )
+		default-frame-alist)
+	)
+     (define-key global-map [?¥] "\\")
+     )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
