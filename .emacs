@@ -117,3 +117,4 @@
  '(mmm-comment-submode-face ((t nil)))
  '(mmm-declaration-submode-face ((t nil)))
  '(mmm-default-submode-face ((t nil))))
+(put 'narrow-to-region 'disabled nil)
