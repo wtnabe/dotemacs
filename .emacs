@@ -7,8 +7,8 @@
 (global-set-key "\C-x\C-b" 'bs-show)
 (global-set-key "\C-h" (quote delete-backward-char))
 
-;; font
 (when window-system
+  ;; font
   (setq default-frame-alist
 	(append (list
 		 '(font . "Migu 1M 13")
