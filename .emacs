@@ -108,7 +108,8 @@
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (string-inflection origami json-mode esa simplenote2 company php-mode typescript-mode feature-mode markdown-mode rhtml-mode editorconfig vue-mode yaml-mode csv-mode)))
+    (plantuml-mode string-inflection origami json-mode esa simplenote2 company php-mode typescript-mode feature-mode markdown-mode rhtml-mode editorconfig vue-mode yaml-mode csv-mode)))
+ '(plantuml-default-exec-mode (quote jar))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
