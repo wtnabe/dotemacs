@@ -107,6 +107,7 @@
  '(package-selected-packages
    (quote
     (company php-mode typescript-mode feature-mode markdown-mode rhtml-mode editorconfig vue-mode yaml-mode csv-mode)))
+ '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
