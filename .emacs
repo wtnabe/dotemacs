@@ -19,17 +19,24 @@
      (define-key global-map [?¥] "\\")
      )
 
+(add-hook 'lsp-mode-hook
+	  (setq lsp-solargraph-use-bundler t)
+;(setq-default flycheck-disabled-checkers '(ruby-rubocop))
+(use-package add-node-modules-path
+  :hook (web-mode js-mode js2-mode typescript-mode vue-mode)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
+ '(column-number-mode t)
+ '(company-auto-complete ''company-explicit-action-p)
  '(dired-listing-switches "-alo")
  '(dired-use-ls-dired nil)
  '(editorconfig-indentation-alist
-   (quote
-    ((vue-mode js-indent-level css-indent-offset)
+   '((vue-mode js-indent-level css-indent-offset)
      (apache-mode apache-indent-level)
      (awk-mode c-basic-offset)
      (bpftrace-mode c-basic-offset)
@@ -97,19 +104,33 @@
 			     (size)
 			     2)
       web-mode-attr-indent-offset web-mode-attr-value-indent-offset web-mode-code-indent-offset web-mode-css-indent-offset web-mode-markup-indent-offset web-mode-sql-indent-offset web-mode-block-padding web-mode-script-padding web-mode-style-padding)
-     (yaml-mode yaml-indent-offset))))
+     (yaml-mode yaml-indent-offset)))
  '(editorconfig-mode t)
  '(flycheck-javascript-eslint-executable nil)
- '(global-company-mode t)
+ '(flycheck-javascript-standard-executable nil)
+ '(flycheck-ruby-rubocop-executable "bundle exec rubocop")
+ '(flycheck-typescript-tslint-executable nil)
+ '(global-company-mode nil)
  '(global-flycheck-mode t)
  '(inhibit-startup-screen t)
+ '(lsp-steep-log-level "info")
+ '(lsp-tailwindcss-auto-install-server t)
+ '(lsp-tailwindcss-major-modes '(rjsx-mode web-mode html-mode html+-mode css-mode))
  '(menu-bar-mode nil)
- '(mmm-global-mode (quote maybe) nil (mmm-mode))
+ '(mmm-global-mode 'maybe nil (mmm-mode))
  '(package-enable-at-startup nil)
  '(package-selected-packages
-   (quote
-    (plantuml-mode string-inflection origami json-mode esa simplenote2 company php-mode typescript-mode feature-mode markdown-mode rhtml-mode editorconfig vue-mode yaml-mode csv-mode)))
- '(plantuml-default-exec-mode (quote jar))
+   '(lsp-mode jtsx web-mode docker-tramp docker-compose-mode gradle-mode toml-mode flycheck vue-mode graphql-mode use-package add-node-modules-path exec-path-from-shell rbs-mode dockerfile-mode plantuml-mode string-inflection origami json-mode esa simplenote2 company php-mode typescript-mode feature-mode markdown-mode editorconfig yaml-mode csv-mode))
+ '(plantuml-default-exec-mode 'jar)
+ '(plantuml-executable-path "/opt/homebrew/bin/plantuml")
+ '(plantuml-jar-args '("-charset" "UTF-8" "-graphvizdot /opt/homebrew/bin/dot"))
+ '(plantuml-jar-path
+   "/opt/homebrew/Cellar/plantuml/1.2025.1/libexec/plantuml.jar")
+ '(plantuml-java-args
+   '("-Djava.awt.headless=true" "-jar" "--illegal-access=deny"))
+ '(ruby-flymake-use-rubocop-if-available nil)
+ '(ruby-insert-encoding-magic-comment nil)
+ '(safe-local-variable-values '((encoding . utf-8)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -120,5 +141,9 @@
  '(menu ((t (:inverse-video t))))
  '(mmm-comment-submode-face ((t nil)))
  '(mmm-declaration-submode-face ((t nil)))
- '(mmm-default-submode-face ((t nil))))
+ '(mmm-default-submode-face ((t nil)))
+ '(region ((t (:extend t :background "color-103" :foreground "brightwhite"))))
+ '(tty-menu-selected-face ((t (:background "color-17"))))
+ '(web-mode-html-attr-name-face ((t (:foreground "brightblack"))))
+ '(web-mode-html-tag-face ((t (:foreground "color-52")))))
 (put 'narrow-to-region 'disabled nil)
